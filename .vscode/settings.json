@@ -32,6 +32,7 @@
     "proxy.ts": true,
     "STACK.md": true,
     "tsconfig.json": true,
-    "tsconfig.tsbuildinfo": true
+    "tsconfig.tsbuildinfo": true,
+    "postcss.config.mjs": true
   }
 }

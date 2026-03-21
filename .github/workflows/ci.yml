@@ -1,0 +1,50 @@
+name: CI_Hardened
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  security_and_quality:
+    name: Industrial Audit & Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Security Audit
+        run: pnpm audit --audit-level=high
+
+      - name: Lint & Format (Biome)
+        run: pnpm lint
+
+      - name: Type Check (Strict)
+        run: pnpm type-check
+
+      - name: Next.js Build Check
+        run: pnpm build
+        env:
+          SKIP_ENV_VALIDATION: "true"
+          NODE_ENV: production
+
+      - name: Verify Bundle Size
+        run: |
+          if [ -d .next ]; then
+            echo "Build successful. Checking bundle size..."
+            du -sh .next
+          fi

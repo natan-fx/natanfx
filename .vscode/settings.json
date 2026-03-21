@@ -1,0 +1,37 @@
+{
+  "css.customData": [],
+  "css.lint.unknownAtRules": "ignore",
+  "tailwindCSS.experimental.configFile": null,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "css"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
+  "files.exclude": {
+    ".github": true,
+    ".husky": true,
+    ".vscode": true,
+    "components\\providers": true,
+    "lib\\i18n": true,
+    "lib\\env.ts": true,
+    "lib\\ratelimit.ts": true,
+    "node_modules": true,
+    "public\\favicon.ico": true,
+    "public\\favicon.svg": true,
+    ".gitignore": true,
+    "AGENTS.md": true,
+    "biome.json": true,
+    "commitlint.config.mjs": true,
+    "GEMINI.md": true,
+    "next-env.d.ts": true,
+    "next.config.ts": true,
+    "package.json": true,
+    "pnpm-lock.yaml": true,
+    "proxy.ts": true,
+    "STACK.md": true,
+    "tsconfig.json": true,
+    "tsconfig.tsbuildinfo": true
+  }
+}

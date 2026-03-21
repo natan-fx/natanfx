@@ -1,0 +1,52 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.pnpm-debug.log*
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+.turbo/
+
+# Production
+/build
+/dist
+
+# Environment Variables
+.env
+.env*.local
+.env.test
+.env.development
+.env.production
+
+# Vercel
+.vercel
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Internal Instructions (Security & Context)
+GEMINI.md
+STACK.md
+AGENTS.md
+
+# IDEs
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

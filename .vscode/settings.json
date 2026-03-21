@@ -29,7 +29,7 @@
     "next.config.ts": true,
     "package.json": true,
     "pnpm-lock.yaml": true,
-    "middleware.ts": true,
+    "proxy.ts": true,
     "STACK.md": true,
     "tsconfig.json": true,
     "tsconfig.tsbuildinfo": true,

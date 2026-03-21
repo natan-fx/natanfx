@@ -7,7 +7,7 @@ const fallbackCache = new QuickLRU<string, { count: number; expiresAt: number }>
   maxSize: 10000,
 });
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const requestId = crypto.randomUUID();
   const forwarded = request.headers.get('x-forwarded-for');
   const ip = forwarded
@@ -43,7 +43,7 @@ export async function middleware(request: NextRequest) {
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: ${isDev ? "'unsafe-eval'" : ''}`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https:",
-    "font-src 'self' data: blob: https:",
+    "font-src 'self' data:",
     "connect-src 'self' https: https://*.posthog.com https://*.vercel-analytics.com",
     "object-src 'none'",
     "base-uri 'self'",
@@ -62,7 +62,7 @@ export async function middleware(request: NextRequest) {
   response.headers.set('X-Permitted-Cross-Domain-Policies', 'none');
   response.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
   response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
-  response.headers.set('Cross-Origin-Embedder-Policy', 'credentialless'); // Isolamento flexível
+  response.headers.set('Cross-Origin-Embedder-Policy', 'require-corp'); // Isolamento total de recursos
 
   // Permissions Policy granular (Privacidade máxima)
   response.headers.set(

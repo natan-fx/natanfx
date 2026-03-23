@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -9,6 +13,11 @@
   --color-secondary: var(--secondary);
   --color-tertiary: var(--tertiary);
   --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-input: var(--border);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-sm: calc(var(--radius) * 0.6);
 }
 
 @layer base {
@@ -18,6 +27,8 @@
     --secondary: #676767;
     --tertiary: #656565;
     --border: #999999;
+    --ring: #000000;
+    --radius: 0.625rem;
   }
 
   .dark {
@@ -26,6 +37,7 @@
     --secondary: #a1a1a1;
     --tertiary: #1a1a1a;
     --border: #272727;
+    --ring: #ededed;
   }
 
   body {
@@ -33,6 +45,7 @@
     color: var(--color-primary);
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    @apply antialiased;
   }
 
   * {

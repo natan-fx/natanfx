@@ -45,6 +45,17 @@ AGENTS.md
 !.vscode/settings.json
 .idea/
 
+# Testing (Playwright/Vitest)
+/playwright-report/
+/test-results/
+/coverage/
+/.vitest-result/
+blob-report/
+playwright/.cache/
+
+# Linter/Formatter (Biome)
+.biome_cache/
+
 # OS Files
 .DS_Store
 Thumbs.db

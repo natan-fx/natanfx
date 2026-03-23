@@ -1,6 +1,89 @@
 {
-  "Hero": {
-    "name": "Natan Virgílio",
-    "title": "Product Designer & UX/UI"
+  "home": {
+    "hero": {
+      "name": "NATAN VIRGÍLIO",
+      "role_1": "PRODUCT DESIGNER",
+      "role_2": "UX/UI DESIGNER",
+      "role_sep": "|",
+      "location": "BRAZIL",
+      "work_mode": "REMOTE",
+      "belief_title": "I BELIEVE THAT",
+      "belief_text": "Good design solves real problems and delivers measurable results. It reduces support costs, increases retention, and drives profit. It turns complexity into clarity and friction into flow."
+    }
+  },
+
+  "contact": {
+    "linkedin_label": "LinkedIn",
+    "linkedin_url": "https://www.linkedin.com/in/natan-fx",
+    "email": "contact@natanfx.com",
+    "email_label": "Email",
+    "github_label": "GitHub",
+    "github_url": "https://github.com/natan-fx",
+    "phone": "+55 (82) 9 98178-9429",
+    "phone_label": "Phone"
+  },
+
+  "navigation": {
+    "logo": {
+      "nfx": "NFX",
+      "sep": "/",
+      "portfolio": "PORTFOLIO"
+    },
+    "resume": "RESUME CV",
+    "about": "ABOUT ME",
+    "menu": {
+      "theme_light": "Light Mode",
+      "theme_dark": "Dark Mode",
+      "lang_toggle": "Mudar para Português",
+      "lang_code": "br"
+    },
+    "aria": {
+      "home": "Go to homepage",
+      "about": "Go to About page",
+      "resume": "Download resume in {lang}",
+      "lang_name": "english",
+      "menu": "Open navigation menu"
+    }
+  },
+
+  "footer": {
+    "download": {
+      "title": "Download",
+      "label": "Resume CV (PDF)"
+    },
+    "language": {
+      "title": "Languages"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "copyright": "© 2026 Natan Virgílio. Building with precision.",
+    "privacy": {
+      "label": "Privacy Policy",
+      "url": "/privacy"
+    }
+  },
+
+  "seo": {
+    "global": {
+      "titleTemplate": "%s | Natan.FX",
+      "defaultTitle": "Natan.FX | Product Designer & UX/UI",
+      "description": "Natan Virgílio's portfolio — Product Designer specialized in high-complexity systems, GovTech, and end-to-end execution. From ethnographic Discovery to full technical Handoff.",
+      "keywords": "Product Designer,UX Designer,UI Designer,UX/UI,Service Design,GovTech,High-Density UI,Design System,Figma,Portfolio,Product Design,User Research,Data Compliance,Accessibility,WCAG,Natan Virgílio,Natan FX,natanfx,Brazil,Alagoas"
+    },
+    "pages": {
+      "home": {
+        "title": "Home",
+        "description": "Natan Virgílio — UX/UI Product Designer with case studies in GovTech and complex systems. Portfolio with full process: research, prototype, technical specification, and development handoff."
+      },
+      "about": {
+        "title": "About Me",
+        "description": "Product Designer with end-to-end expertise in complex systems and GovTech. Hands-on experience in User Research, Design Systems, WCAG 2.2 accessibility, and technical handoff — with engineering autonomy in HTML, CSS, Tailwind CSS, and Next.js."
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "Privacy policy for natanfx.com portfolio. Learn how your data is handled in compliance with applicable data protection regulations."
+      }
+    }
   }
 }

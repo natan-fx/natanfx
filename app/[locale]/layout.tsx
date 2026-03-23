@@ -3,13 +3,28 @@ import { ThemeProvider } from '@/components/providers/theme-provider';
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 import type { Metadata, Viewport } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { headers } from 'next/headers';
 import '../globals.css';
 
-export const metadata: Metadata = {
-  title: 'natanfx | Product Designer',
-  description: 'Portfolio profissional de natanfx.',
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seo.global' });
+
+  return {
+    title: {
+      template: t('titleTemplate'),
+      default: t('defaultTitle'),
+    },
+    description: t('description'),
+    keywords: t('keywords').split(','),
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: [
@@ -30,6 +45,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const headerList = await headers();
   const nonce = headerList.get('x-nonce') || headerList.get('nonce') || '';
+  const messages = await getMessages();
 
   return (
     <html
@@ -38,17 +54,19 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased">
-        <NonceProvider nonce={nonce}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem={false}
-            disableTransitionOnChange
-            nonce={nonce}
-          >
-            {children}
-          </ThemeProvider>
-        </NonceProvider>
+        <NextIntlClientProvider messages={messages}>
+          <NonceProvider nonce={nonce}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+              nonce={nonce}
+            >
+              {children}
+            </ThemeProvider>
+          </NonceProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

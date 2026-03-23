@@ -32,8 +32,10 @@
     "resume": "RESUME CV",
     "about": "ABOUT ME",
     "menu": {
+      "theme_label": "Change theme",
       "theme_light": "Light Mode",
       "theme_dark": "Dark Mode",
+      "theme_system": "System Mode",
       "lang_toggle": "Mudar para Português",
       "lang_code": "br"
     },

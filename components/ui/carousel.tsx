@@ -1,11 +1,10 @@
 'use client';
 
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 import * as React from 'react';
-
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -119,6 +118,7 @@ function Carousel({
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
         aria-roledescription="carousel"
+        aria-label="Carousel"
         data-slot="carousel"
         {...props}
       >
@@ -128,25 +128,28 @@ function Carousel({
   );
 }
 
-function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselContent({ className, ...props }: React.ComponentProps<'ul'>) {
   const { carouselRef, orientation } = useCarousel();
 
   return (
     <div ref={carouselRef} className="overflow-hidden rounded-sm" data-slot="carousel-content">
-      <div
-        className={cn('flex', orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)}
+      <ul
+        className={cn(
+          'flex min-w-0',
+          orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
+          className
+        )}
         {...props}
       />
     </div>
   );
 }
 
-function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselItem({ className, ...props }: React.ComponentProps<'li'>) {
   const { orientation } = useCarousel();
 
   return (
-    <div
-      role="group"
+    <li
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
@@ -220,11 +223,11 @@ function CarouselNext({
 }
 
 export {
-  type CarouselApi,
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
   CarouselNext,
+  CarouselPrevious,
   useCarousel,
 };

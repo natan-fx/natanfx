@@ -1,11 +1,11 @@
-import { NonceProvider } from '@/components/providers/nonce-provider';
-import { ThemeProvider } from '@/components/providers/theme-provider';
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 import type { Metadata, Viewport } from 'next';
+import { headers } from 'next/headers';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
-import { headers } from 'next/headers';
+import { NonceProvider } from '@/components/providers/nonce-provider';
+import { ThemeProvider } from '@/components/providers/theme-provider';
 import '../globals.css';
 
 export async function generateMetadata({

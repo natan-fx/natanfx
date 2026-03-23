@@ -1,7 +1,7 @@
-import { i18nMiddleware } from '@/lib/i18n/routing';
-import { apiLimiter } from '@/lib/ratelimit';
 import { type NextRequest, NextResponse } from 'next/server';
 import QuickLRU from 'quick-lru';
+import { i18nMiddleware } from '@/lib/i18n/routing';
+import { apiLimiter } from '@/lib/ratelimit';
 
 const fallbackCache = new QuickLRU<string, { count: number; expiresAt: number }>({
   maxSize: 10000,

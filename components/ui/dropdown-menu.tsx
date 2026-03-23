@@ -1,10 +1,9 @@
 'use client';
 
 import { Menu as MenuPrimitive } from '@base-ui/react/menu';
-import type * as React from 'react';
-
-import { cn } from '@/lib/utils';
 import { ChevronLeftIcon } from 'lucide-react';
+import type * as React from 'react';
+import { cn } from '@/lib/utils';
 
 function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
   return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
@@ -113,6 +112,7 @@ function DropdownMenuItem({
   className,
   inset,
   variant = 'default',
+  children,
   ...props
 }: MenuPrimitive.Item.Props & {
   inset?: boolean;
@@ -128,7 +128,9 @@ function DropdownMenuItem({
         className
       )}
       {...props}
-    />
+    >
+      <span className="flex-1 truncate min-w-0 text-right">{children}</span>
+    </MenuPrimitive.Item>
   );
 }
 
@@ -258,18 +260,18 @@ function DropdownMenuShortcut({ className, ...props }: React.ComponentProps<'spa
 
 export {
   DropdownMenu,
-  DropdownMenuPortal,
-  DropdownMenuTrigger,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuLabel,
   DropdownMenuItem,
-  DropdownMenuCheckboxItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuSub,
-  DropdownMenuSubTrigger,
   DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
 };

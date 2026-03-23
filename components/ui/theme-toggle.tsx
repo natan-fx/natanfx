@@ -8,7 +8,7 @@ import * as React from 'react';
 import { ToggleGroup, ToggleGroupItem } from './toggle-group';
 
 export function ThemeToggle() {
-  const t = useTranslations('ThemeToggle');
+  const t = useTranslations('navigation.menu');
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
@@ -30,25 +30,25 @@ export function ThemeToggle() {
         }
       }}
       spacing={8}
-      aria-label={t('label')}
+      aria-label={t('theme_label')}
     >
       <ToggleGroupItem
         value="light"
-        aria-label={t('light')}
+        aria-label={t('theme_light')}
         className="size-10 rounded-full border border-border"
       >
         <Sun className="size-5" />
       </ToggleGroupItem>
       <ToggleGroupItem
         value="dark"
-        aria-label={t('dark')}
+        aria-label={t('theme_dark')}
         className="size-10 rounded-full border border-border"
       >
         <Moon className="size-5" />
       </ToggleGroupItem>
       <ToggleGroupItem
         value="system"
-        aria-label={t('system')}
+        aria-label={t('theme_system')}
         className="size-10 rounded-full border border-border"
       >
         <Monitor className="size-5" />

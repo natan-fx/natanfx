@@ -32,8 +32,10 @@
     "resume": "CURRÍCULO",
     "about": "SOBRE MIM",
     "menu": {
+      "theme_label": "Alterar tema",
       "theme_light": "Modo Claro",
       "theme_dark": "Modo Escuro",
+      "theme_system": "Modo Sistema",
       "lang_toggle": "Switch to English",
       "lang_code": "en"
     },

@@ -6,8 +6,7 @@
     "plaintext": "css"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "explicit",
-    "quickfix.biome": "always"
+    "source.fixAll.biome": "explicit"
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
@@ -25,18 +24,19 @@
     ".gitignore": true,
     "biome.json": true,
     "commitlint.config.mjs": true,
-    "GEMINI.md": true,
     "next-env.d.ts": true,
     "next.config.ts": true,
-    "package.json": true,
     "pnpm-lock.yaml": true,
     "proxy.ts": true,
-    "STACK.md": true,
     "tsconfig.json": true,
     "tsconfig.tsbuildinfo": true,
     "postcss.config.mjs": true,
     "lib\\utils.ts": true,
     "components.json": true,
+    "pnpm-workspace.yaml": true,
+    "package.json": true,
+    "STACK.md": true,
+    "GEMINI.md": true,
     "AGENTS.md": true
   }
 }

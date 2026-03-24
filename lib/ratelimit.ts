@@ -1,6 +1,6 @@
-import { env } from '@/lib/env';
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
+import { env } from '@/lib/env';
 
 /**
  * Limitadores de Rate Limit (Lei #12 do STACK.md)

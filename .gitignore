@@ -35,11 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Internal Instructions (Security & Context)
-GEMINI.md
-STACK.md
-AGENTS.md
-
 # IDEs
 .vscode/*
 !.vscode/settings.json
